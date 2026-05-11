@@ -1,0 +1,13 @@
+DEFAULT menu.c32
+PROMPT 0
+TIMEOUT 500
+MENU TITLE NetBoot Lab
+
+LABEL local
+  MENU LABEL Boot from local disk
+  LOCALBOOT 0
+
+LABEL ubuntu
+  MENU LABEL Boot Ubuntu from network
+  KERNEL vmlinuz
+  APPEND root=/dev/nfs nfsroot=192.168.56.10:/srv/nfs/rootfs,vers=3 rw ip=dhcp initrd=initrd.gz
